@@ -66,10 +66,10 @@ public class PendudukRest {
 	@PostMapping("/delete")
 	public ResponseUtil deletePenduduk(@RequestBody Integer id_penduduk) {
 
-		Penduduk pend = pendudukDao.findOne(id_penduduk);
+		Penduduk pen = pendudukDao.findOne(id_penduduk);
 
-		if (pend != null) {
-			pendudukDao.delete(pend);
+		if (pen != null) {
+			pendudukDao.delete(pen);
 		} else
 			return new ResponseUtil();
 		
