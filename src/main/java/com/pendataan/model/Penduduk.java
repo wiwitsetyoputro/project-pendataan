@@ -46,7 +46,7 @@ public class Penduduk implements java.io.Serializable {
 	private Status_perkawinan status_perkawinan;
 	@Enumerated(EnumType.STRING)
 	private Kewarganegaraan kewarganegaraan;
-	
+	private Integer status_ekonomi;
 
 	public Integer getId_penduduk() {
 		return id_penduduk;
@@ -158,6 +158,14 @@ public class Penduduk implements java.io.Serializable {
 
 	public void setKewarganegaraan(Kewarganegaraan kewarganegaraan) {
 		this.kewarganegaraan = kewarganegaraan;
+	}
+
+	public Integer getStatus_ekonomi() {
+		return status_ekonomi;
+	}
+
+	public void setStatus_ekonomi(Integer status_ekonomi) {
+		this.status_ekonomi = status_ekonomi;
 	}
 
 }

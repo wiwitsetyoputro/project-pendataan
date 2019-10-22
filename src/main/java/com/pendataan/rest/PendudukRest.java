@@ -43,6 +43,7 @@ public class PendudukRest {
 			pend.setStatus_pendidikan(dataPenduduk.getStatus_pendidikan());
 			pend.setStatus_perkawinan(dataPenduduk.getStatus_perkawinan());
 			pend.setKewarganegaraan(dataPenduduk.getKewarganegaraan());
+			pend.setStatus_ekonomi(dataPenduduk.getStatus_ekonomi());
 			pendudukDao.save(pend);
 		} else {
 			penduduk.setNama_lengkap(dataPenduduk.getNama_lengkap());
@@ -57,6 +58,7 @@ public class PendudukRest {
 			penduduk.setStatus_pendidikan(dataPenduduk.getStatus_pendidikan());
 			penduduk.setStatus_perkawinan(dataPenduduk.getStatus_perkawinan());
 			penduduk.setKewarganegaraan(dataPenduduk.getKewarganegaraan());
+			penduduk.setStatus_ekonomi(dataPenduduk.getStatus_ekonomi());
 			pendudukDao.save(penduduk);
 		}
 		return new ResponseEntity("Success", HttpStatus.OK);

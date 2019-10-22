@@ -25,6 +25,7 @@ public class PendudukDto {
 	private Status_pendidikan status_pendidikan;
 	private Status_perkawinan status_perkawinan;
 	private Kewarganegaraan kewarganegaraan;
+	private Integer status_ekonomi;
 
 	public Integer getId_penduduk() {
 		return id_penduduk;
@@ -136,6 +137,14 @@ public class PendudukDto {
 
 	public void setKewarganegaraan(Kewarganegaraan kewarganegaraan) {
 		this.kewarganegaraan = kewarganegaraan;
+	}
+
+	public Integer getStatus_ekonomi() {
+		return status_ekonomi;
+	}
+
+	public void setStatus_ekonomi(Integer status_ekonomi) {
+		this.status_ekonomi = status_ekonomi;
 	}
 
 }
