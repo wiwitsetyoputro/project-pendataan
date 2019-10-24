@@ -1,5 +1,4 @@
 package com.pendataan.rest;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -8,6 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.pendataan.commonServices.CommonStatus;
 import com.pendataan.dao.PendudukDao;
 import com.pendataan.dto.PendudukDto;
 import com.pendataan.model.Penduduk;
@@ -43,7 +43,8 @@ public class PendudukRest {
 			pend.setStatus_pendidikan(dataPenduduk.getStatus_pendidikan());
 			pend.setStatus_perkawinan(dataPenduduk.getStatus_perkawinan());
 			pend.setKewarganegaraan(dataPenduduk.getKewarganegaraan());
-			pend.setStatus_ekonomi(dataPenduduk.getStatus_ekonomi());
+			pend.setStatus_ekonomi(CommonStatus.getStatusEkonomi(penghasilan));
+			pend.setJumlah_penghasilan(dataPenduduk.getJumlah_penghasilan(penghasilan));
 			pendudukDao.save(pend);
 		} else {
 			penduduk.setNama_lengkap(dataPenduduk.getNama_lengkap());
@@ -58,7 +59,8 @@ public class PendudukRest {
 			penduduk.setStatus_pendidikan(dataPenduduk.getStatus_pendidikan());
 			penduduk.setStatus_perkawinan(dataPenduduk.getStatus_perkawinan());
 			penduduk.setKewarganegaraan(dataPenduduk.getKewarganegaraan());
-			penduduk.setStatus_ekonomi(dataPenduduk.getStatus_ekonomi());
+			penduduk.setStatus_ekonomi(CommonStatus.getStatusEkonomi(penghasilan));
+			penduduk.setJumlah_penghasilan(dataPenduduk.getJumlah_penghasilan(penghasilan));
 			pendudukDao.save(penduduk);
 		}
 		return new ResponseEntity("Success", HttpStatus.OK);
